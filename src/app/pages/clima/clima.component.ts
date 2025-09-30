@@ -9,17 +9,18 @@ import { toSignal } from '@angular/core/rxjs-interop';
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss'],
 })
-export class ClimaComponent implements OnInit {
+export class ClimaComponent {
   
   navegador = inject(Router);
   openWeatherService = inject(OpenWeatherService);
-  dadosClima = toSignal
+
+  dadosClima = toSignal<WeatherResponse | null>(
+    this.openWeatherService.buscarInfoClimaCidadeAtual()
+  );
+ 
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.openWeatherService.buscarInfoClimaCidadeAtual()
-  }
 
   navegarParaTelaDePesquisa() {
     this.navegador.navigate(['/pesquisa']);
