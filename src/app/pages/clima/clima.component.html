@@ -1,9 +1,11 @@
 <div class="clima-container"> 
 
     <div class="card">
-        <h1>Bem vindo ao clima-tempo</h1>
+        <h1 class="city">{{dadosClima()?.name}}</h1>
+
+        <div class="temp">{{dadosClima()?.main?.temp | number: '1.0-0'}}°C</div>
 
         <button class="button" (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
     </div>
-    
+
 </div>
