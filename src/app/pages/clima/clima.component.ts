@@ -1,5 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OpenWeatherService } from '../../service/open-weather.service';
+import { WeatherResponse } from '../../models/wheater-response.model';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-clima',
@@ -9,10 +12,13 @@ import { Router } from '@angular/router';
 export class ClimaComponent implements OnInit {
   
   navegador = inject(Router);
+  openWeatherService = inject(OpenWeatherService);
+  dadosClima = toSignal
 
   constructor() {}
 
   ngOnInit(): void {
+    this.openWeatherService.buscarInfoClimaCidadeAtual()
   }
 
   navegarParaTelaDePesquisa() {
