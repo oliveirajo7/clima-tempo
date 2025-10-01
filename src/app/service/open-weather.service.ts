@@ -19,8 +19,9 @@ export class OpenWeatherService {
 
     const urlCompleta =
         this.apiUrl + '?q=Dois%20Vizinhos&appid=' 
-        + this.apiKey + '&lang=pt_br&units=metrics';
+        + this.apiKey + '&lang=pt_br&units=metric';
 
+        setTimeout(() => {}, 10000);
     return this.http.get<WeatherResponse>(urlCompleta);
   }
 }

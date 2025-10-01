@@ -10,15 +10,16 @@
         min-height: 100vh;
         display: grid;
         place-items: center;
-        padding: 24px;
         font-family: Georgia, 'Times New Roman', Times, serif;
-        
-        h1 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 700;
+
+
+
+        .city {
+            margin: 0 0 8px;
+            font-size: 2rem;
+            font-weight: bold;
             color: #ffffff;
-            text-align: center;
+            letter-spacing: 0.5px;
         }
 
         .card {
@@ -31,18 +32,62 @@
 
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px) saturate(120%);
+
+            &:hover {  
+                transform: translateX(-5px);
+                box-shadow: 0 30px 60px  rgba(0, 0, 0, 0.4);
+                border-color: rgba(255, 255, 255, 0.25);
+            }
         }
         
         button {
-                margin-top: 35px;
-                width: 150px;
-                background: rgba(255, 255, 255, 0.8);
+                background: linear-gradient(135deg, #f9ed69, #f9ed69, 0.8);
                 color: #000000;
                 font-weight: 600;
                 cursor: pointer;
-                padding: 12px;
-                border-radius: 8px;
+                padding: 16px 32px;
+                border-radius: 50px;
                 border: none;
+                font-size: 1.1rem;
+                position: relative;
         }
+
+        .temp {
+            font-size: 2.0rem;
+            font-weight: 700;
+            margin: 4px 0 8px;
+            color: #ffffff;
+            line-height: 1;
+            text-shadow: 0 4px 16px  rgba(0, 0, 0, 0.4);           
+        }
+
+        .img-titulo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px ;
+            margin: 8px 0 16px;
+        }
+
+        
+        .desc {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .icon {
+            width: 52px;
+            height: 52px;
+        }
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200%;
+    }
+    100% {
+        background-position: -200%;
     }
 }

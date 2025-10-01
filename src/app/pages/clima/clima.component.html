@@ -5,6 +5,13 @@
 
         <div class="temp">{{dadosClima()?.main?.temp | number: '1.0-0'}}°C</div>
 
+        @if (dadosClima()){
+            @let clima = dadosClima()!.weather[0];
+
+            <img class="icon" [src]="'https://openweathermap.org/img/wn/' + clima.icon + '@2x.png'">
+            <p class="desc">{{clima.description | titlecase }}</p>
+        }
+    
         <button class="button" (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
     </div>
 
