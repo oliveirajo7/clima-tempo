@@ -1,18 +1,29 @@
-<div class="clima-container"> 
+<div class="clima-container">
 
-    <div class="card">
-        <h1 class="city">{{dadosClima()?.name}}</h1>
+  <div class="card">
+    @if (dadosClima()) {
+      <h1 class="city">{{ dadosClima()?.name}}</h1>
 
-        <div class="temp">{{dadosClima()?.main?.temp | number: '1.0-0'}}°C</div>
+      <div class="temp">{{ dadosClima()?.main?.temp | number: '1.0-0' }}°C</div>
 
-        @if (dadosClima()){
-            @let clima = dadosClima()!.weather[0];
+      <div class="img-titulo">
+        @let clima = dadosClima()!.weather[0];
 
-            <img class="icon" [src]="'https://openweathermap.org/img/wn/' + clima.icon + '@2x.png'">
-            <p class="desc">{{clima.description | titlecase }}</p>
-        }
-    
-        <button class="button" (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
-    </div>
+        <img class="icon" [src]="'https://openweathermap.org/img/wn/' + clima.icon + '@2x.png'">
+        <p class="desc">{{ clima.description | titlecase }}</p>
+      </div>
+
+      <div class="minmax">
+        <span>Min {{dadosClima()?.main?.temp_min | number: '1.0-0'}}°C</span>
+        <span>Max {{dadosClima()?.main?.temp_max | number: '1.0-0'}}°C</span>
+      </div>
+
+      <button (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
+    } @else {
+      <div class="img-titulo">
+        <p class="desc">Carregando ...</p>
+      </div>
+    }
+  </div>
 
 </div>
