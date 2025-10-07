@@ -2,7 +2,9 @@
 
   <div class="card">
     @if (dadosClima()) {
-      <h1 class="city">{{ dadosClima()?.name}}</h1>
+      <app-nome-cidade>
+        
+      </app-nome-cidade>
 
       <div class="temp">{{ dadosClima()?.main?.temp | number: '1.0-0' }}°C</div>
 

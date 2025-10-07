@@ -5,11 +5,12 @@ import { WeatherResponse } from '../../models/wheater-response.model';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
 import { DecimalPipe, TitleCasePipe } from '@angular/common';
+import { NomeCidadeComponent } from "../../components/nome-cidade/nome-cidade.component";
 
 @Component({
   selector: 'app-clima',
   standalone: true,
-  imports: [DecimalPipe, TitleCasePipe],
+  imports: [DecimalPipe, TitleCasePipe, NomeCidadeComponent],
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss'],
 })
