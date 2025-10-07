@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OpenWeatherService } from '../../service/open-weather.service';
+import { OpenWeatherService } from '../../services/open-weather.service';
 import { WeatherResponse } from '../../models/wheater-response.model';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
