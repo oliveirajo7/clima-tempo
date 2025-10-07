@@ -6,11 +6,13 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
 import { DecimalPipe, TitleCasePipe } from '@angular/common';
 import { NomeCidadeComponent } from "../../components/nome-cidade/nome-cidade.component";
+import { TemperaturaComponent } from '../../components/temperatura/temperatura.component';
+import { LoadingComponent } from "../../components/loading/loading.component";
 
 @Component({
   selector: 'app-clima',
   standalone: true,
-  imports: [DecimalPipe, TitleCasePipe, NomeCidadeComponent],
+  imports: [DecimalPipe, TitleCasePipe, NomeCidadeComponent, TemperaturaComponent, LoadingComponent],
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss'],
 })

@@ -3,10 +3,12 @@
   <div class="card">
     @if (dadosClima()) {
       <app-nome-cidade>
-        
+        {{ dadosClima()?.name}}
       </app-nome-cidade>
 
-      <div class="temp">{{ dadosClima()?.main?.temp | number: '1.0-0' }}°C</div>
+      <app-temperatura>
+        {{ dadosClima()?.main?.temp | number: '1.0-0' }}°C
+      </app-temperatura>
 
       <div class="img-titulo">
         @let clima = dadosClima()!.weather[0];
@@ -22,9 +24,7 @@
 
       <button (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
     } @else {
-      <div class="img-titulo">
-        <p class="desc">Carregando ...</p>
-      </div>
+      <app-loading></app-loading>
     }
   </div>
 
